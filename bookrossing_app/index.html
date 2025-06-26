@@ -1,0 +1,916 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../parser_app/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Bookcrossing App - Bookcrossing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fastapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bookcrossing" class="md-header__button md-logo" aria-label="Bookcrossing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bookcrossing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bookcrossing App
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bookcrossing" class="md-nav__button md-logo" aria-label="Bookcrossing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bookcrossing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Bookcrossing App
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bookcrossing App
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цели
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Техническое задание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Модели
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 основных моделей
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crud-" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRUD-запросы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRUD-запросы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание объектов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение объектов и списки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функционал пользователя
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parser_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker_depl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цели
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Техническое задание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Модели
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 основных моделей
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crud-" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRUD-запросы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRUD-запросы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Создание объектов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение объектов и списки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обновление
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Удаление
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функционал пользователя
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fastapi">Реализация серверного приложения FastAPI</h1>
+<h2 id="_1">Цели</h2>
+<p>Реализация полноценного серверного приложения с помощью фреймворка FastAPI с 
+применением дополнительных средств и библиотек.</p>
+<h2 id="_2">Техническое задание</h2>
+<p><strong>Задача</strong>: создать веб-приложение, которое позволит пользователям обмениваться книгами между собой.
+Это приложение должно облегчать процесс обмена книгами, позволяя пользователям находить книги, 
+которые им интересны, и находить новых пользователей для обмена книгами. </p>
+<p><strong>Функционал веб-приложения</strong> должен включать следующее:</p>
+<ul>
+<li>
+<p><strong>Создание профилей</strong>: Возможность пользователям создавать профили, указывать информацию о себе, 
+своих навыках, опыте работы и предпочтениях по проектам.</p>
+</li>
+<li>
+<p><strong>Добавление книг в библиотеку</strong>: Пользователи могут добавлять книги, которыми они готовы 
+поделиться, в свою виртуальную библиотеку на платформе.</p>
+</li>
+<li>
+<p><strong>Поиск и запросы на обмен</strong>: Функционал поиска книг в библиотеке других пользователей. Возможность 
+отправлять запросы на обмен книгами другим пользователям.</p>
+</li>
+<li>
+<p><strong>Управление запросами и обменами</strong>: Возможность просмотра и управления запросами на обмен. 
+Возможность подтверждения или отклонения запросов на обмен.</p>
+</li>
+</ul>
+<h2 id="_3">Модели</h2>
+<h3 id="5">5 основных моделей</h3>
+<ul>
+<li>Профиль пользователя <strong>Profile</strong></li>
+<li>Модель книги <strong>Book</strong></li>
+<li>Персональная библиотека пользователя <strong>ProfileLibrary</strong></li>
+<li>Запрос на книгу <strong>ExchangeRequest</strong></li>
+<li>Информация о завершённом обмене <strong>Exchange</strong></li>
+</ul>
+<p>Дополнительная модель: Пользователь <strong>User</strong></p>
+<p>Модели созданы с помощью библиотеки SQLModel и с использованием БД PostgreSQL.</p>
+<p>Все модели составлены по принципу <strong>ModelBase(SQLModel)</strong> + <strong>Model(ModelBase)</strong>. Базовые 
+модели - это те, с которыми работает обычный крестьянин через Swagger-интерфейс. 
+Расширенные модели, которые наследованы от базовых, 
+включают в себя автоматически встраиваемый id и связи многий-ко-многим.
+Так же существуют классы ModelRead для вывода красивого ответа пользователю. </p>
+<p>Например, таким образом выглядит описание модели Книги:</p>
+<p><em>app/schemas/book.py</em></p>
+<pre><code>class BookBase(SQLModel):
+    title: str
+    author: str
+    description: Optional[str] = None
+
+
+class BookRead(SQLModel):
+    id: int
+    title: str
+    author: str
+    description: Optional[str] = None
+</code></pre>
+<p><em>app/models/book.py</em></p>
+<pre><code>class Book(BookBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    profile_library_id: int = Field(foreign_key=&quot;profilelibrary.id&quot;)
+    requests: List[ExchangeRequest] = Relationship(back_populates=&quot;book&quot;)
+</code></pre>
+<p>Вообще, для работы и тестирования моделей SQLModel необходимо было настроить подключение к СУБД 
+PostgreSQL. Устанавливаем СУБД PostgreSQL через официальный сайт, а также вводим необходимые библиотеки в 
+виртуальное окружение: <code>pip install sqlmodel</code>, <code>pip install psycopg2-binary</code></p>
+<p>Файл с подключением к БД - <strong>connection.py</strong></p>
+<pre><code>from sqlmodel import SQLModel, Session, create_engine
+
+db_url = 'postgresql://postgres:superuser@localhost:5432/bookcrossing_db'
+engine = create_engine(db_url, echo=True)
+
+
+def init_db():
+    SQLModel.metadata.create_all(engine)
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session
+</code></pre>
+<h2 id="crud-">CRUD-запросы</h2>
+<p>Для каждой модели созданы необходимые CRUD-запросы: get, post, patch, delete (с некоторыми 
+исключениями).</p>
+<p>Пример бизнес-логики основных запросов:</p>
+<h3 id="_4">Создание объектов</h3>
+<p>Создание строится по следующему принципу: В эндпоинт поступает базовая модель и 
+настраивается связь с базой данных с помощью <code>session=Depends(get_session)</code>. Метод 
+model_dump загружает упрощенную модель в основную, связанную с БД. Далее обработанный объект 
+передается в сессию с помощью session.add, изменения сохраняются через метод commit и данные для 
+объекта обновляются до актуальных методом refresh.</p>
+<p><code>POST /exchange-requests/</code> - создание пользователем запроса на обмен книгами.</p>
+<pre><code># Создание запроса на обмен книгами
+@router.post(&quot;/exchange-requests/&quot;, response_model=ExchangeRequest)
+def create_exchange_request(exchange_request: ExchangeRequestBase, session=Depends(get_session)):
+    new_exchange_request = ExchangeRequest(**exchange_request.model_dump())
+
+    session.add(new_exchange_request)
+    session.commit()
+    session.refresh(new_exchange_request)
+    return new_exchange_request
+</code></pre>
+<h3 id="_5">Получение объектов и списки</h3>
+<p><code>GET /profiles</code> - получение списка всех существующих профилей, </p>
+<p><code>GET /profiles/{profile_id}</code> - получение профиля по его ID, </p>
+<p><code>GET /profiles/{profile_id}/library</code> - получение личной библиотеки 
+пользователя с информацией как о самом пользователе, так и о его книгах.</p>
+<pre><code># Получить список всех профилей
+@router.get(&quot;/profiles&quot;, response_model=List[Profile])
+def get_profiles(session=Depends(get_session)):
+    return session.exec(select(Profile)).all()
+
+
+# Получить профиль по ID
+@router.get(&quot;/profiles/{profile_id}&quot;, response_model=Profile)
+def get_profile(profile_id: int, session=Depends(get_session)):
+    profile = session.exec(
+        select(Profile)
+        .where(Profile.id == profile_id)).first()
+
+    if profile is None:
+        raise HTTPException(status_code=404, detail=&quot;Profile not found&quot;)
+
+    return profile
+
+
+@router.get(&quot;/profiles/{profile_id}/library&quot;, response_model=ProfileLibraryRead)
+def get_profile_library(profile_id: int, session=Depends(get_session)):
+    library = session.exec(
+        select(ProfileLibrary).where(ProfileLibrary.profile_id == profile_id)
+    ).first()
+
+    if library is None:
+        raise HTTPException(status_code=404, detail=&quot;Library not found&quot;)
+
+    books = session.exec(select(Book).where(Book.profile_library_id == library.id)).all()
+    owner = session.get(Profile, library.profile_id)
+
+    return ProfileLibraryRead(id=library.id, owner=owner, books=books)
+</code></pre>
+<p>Заметим, что в Профиле есть список Книг, который необходимо раскрывать при выполнении 
+get-запроса, а не просто получать их id. Поэтому был создан новый класс, который расширяет 
+возвращаемые вложенные объекты <code>response_model=ProfileLibraryRead</code>.</p>
+<p><img alt="img_6.png" src="../imgs/img_6.png" /></p>
+<h3 id="_6">Обновление</h3>
+<p><code>PATCH /profiles/{profile_id}</code> - изменение параметров пользователя.</p>
+<pre><code># Обновить профиль по ID
+@router.patch(&quot;/profiles/{profile_id}&quot;, response_model=Profile)
+def update_profile(profile_id: int,
+                   profile_data: ProfileBase,
+                   session=Depends(get_session)):
+
+    profile = session.get(Profile, profile_id)
+
+    if profile is None:
+        raise HTTPException(status_code=404, detail=&quot;Profile not found&quot;)
+
+    profile_data_dict = profile_data.model_dump(exclude_unset=True)
+
+    for key, value in profile_data_dict.items():
+        setattr(profile, key, value)
+
+    session.add(profile)
+    session.commit()
+    session.refresh(profile)
+    return profile
+</code></pre>
+<h3 id="_7">Удаление</h3>
+<p><code>DELETE /profile/{profile_id}/book/{book_id}</code> - удаление книги из библиотеки пользователя.</p>
+<pre><code>@app.delete(&quot;/profile/{profile_id}/book/{book_id}&quot;)
+def delete_book(profile_id: int, book_id: int, session=Depends(get_session)):
+    book = session.get(Book, book_id)
+    if book is None or book.owner_id != profile_id:
+        raise HTTPException(status_code=404, detail=&quot;Book not found or does not belong to this &quot;
+                                                    &quot;profile&quot;)
+
+    session.delete(book)
+    session.commit()
+    return {&quot;status&quot;: 200, &quot;message&quot;: &quot;Book deleted successfully&quot;}
+</code></pre>
+<p><img alt="img_7.png" src="../imgs/img_7.png" /></p>
+<p>Другие ручки:</p>
+<p><strong>http://127.0.0.1:8000/profiles/8/library</strong></p>
+<p><img alt="img.png" src="../imgs/img_9.png" /></p>
+<p>В местах, где захотелось, присутствует раскрытие вложенных сущностей.</p>
+<p><strong>http://127.0.0.1:8000/exchanges/10</strong></p>
+<p><img alt="" src="../imgs/img_14.png" /></p>
+<h2 id="_8">Функционал пользователя</h2>
+<p>Разработан функционал пользователя, который включает в себя:</p>
+<ul>
+<li>Авторизацию и регистрацию</li>
+<li>Генерацию JWT-токенов</li>
+<li>Аутентификацию по JWT-токену</li>
+<li>Хэширование паролей</li>
+<li>Дополнительные АПИ-методы для получения информации о пользователе, списка пользователей и смене 
+  пароля</li>
+</ul>
+<p><strong>Регистрация</strong>: <code>POST /registration</code>. В систему поступает значения полей регистрации: имя 
+пользователя, пароль и электронная почта. Во время регистрации пользователя происходит 
+валидация 
+введённых данных (на уже существование такого username в Базе данных), обеспечивается 
+хэширование пароля пользователя для безопасного хранения данных. Один за другим создаются и 
+сохраняются сущности Пользователя, Профиля и Библиотеки пользователя.</p>
+<pre><code>@router.post('/registration')
+def register(user: UserInput, session=Depends(get_session)):
+    users = select_all_users()
+
+    if any(x.username == user.username for x in users):
+        raise HTTPException(status_code=400, detail='Username is taken')
+
+    hashed_pwd = auth_handler.get_password_hash(user.password)
+
+    u = User(username=user.username, password=hashed_pwd, email=user.email)
+
+    session.add(u)
+    session.commit()
+    session.refresh(u)
+
+    profile = Profile(user_id=u.id, username=u.username)  # создаём пустой профиль
+    session.add(profile)
+    session.commit()
+    session.refresh(profile)
+
+    # Создаём библиотеку, связанную с этим профилем
+    library = ProfileLibrary(profile_id=profile.id)
+    session.add(library)
+    session.commit()
+    session.refresh(library)
+
+    return JSONResponse(status_code=HTTP_201_CREATED, content={&quot;message&quot;: &quot;User created &quot;
+                                                                          &quot;successfully&quot;})
+</code></pre>
+<p><img alt="img_10.png" src="../imgs/img_10.png" /></p>
+<p><strong>Авторизация</strong> - процесс получения пользователем токена <code>POST /login</code>
+Производится проверка существования пользователя в системе и проверка правильности введённого 
+пароля. В случае успешной аутентификации пользователю присваивается токен, с помощью которого 
+система запоминает, что этот пользователь хорош. </p>
+<pre><code>@router.post('/login')
+def login(user: UserLogin):
+    user_found = find_user(user.username)
+    if not user_found:
+        raise HTTPException(status_code=401, detail='Invalid username and/or password')
+    verified = auth_handler.verify_password(user.password, user_found.password)
+    if not verified:
+        raise HTTPException(status_code=401, detail='Invalid username and/or password')
+    token = auth_handler.encode_token(user_found.username)
+    return {'token': token}
+</code></pre>
+<p><img alt="" src="../imgs/img_11.png" /></p>
+<p><strong>Получение информации о себе</strong> (пользователе): <code>GET /users/me</code>. Для этого в заголовок запроса, поле 
+Authorization вкладывается полученный токен пользователя. В ответ включены имя пользователя, 
+зашифрованный пароль, время создания пользователя, его ID и email.</p>
+<pre><code>@router.get('/users/me')
+def get_current_user(user: User = Depends(auth_handler.get_current_user)):
+    return user
+</code></pre>
+<p><img alt="" src="../imgs/img_12.png" /></p>
+<p><strong>Смена пароля</strong> (при условии авторизации): <code>PUT /users/change_password</code> + Authorization. Сама логика 
+изменения 
+пароля происходит в отдельной функции, в которую поступают поля формы (ID пользователя, старый 
+пароль, новая версия): проверка существования пользователя, проверка старого пароля, хэширование 
+нового и изменение данных.</p>
+<pre><code>def change_user_password(user_id: int, old_password: str, new_password: str,
+                         session=Depends(get_session)):
+    user = session.get(User, user_id)
+
+    if not user:
+        raise HTTPException(status_code=404, detail=&quot;User not found&quot;)
+
+    # Проверим, что старый пароль совпадает с тем, что в базе данных
+    if not auth_handler.verify_password(old_password, user.password):
+        raise HTTPException(status_code=401,
+                            detail=&quot;Incorrect old password&quot;)
+
+    hashed_new_password = auth_handler.get_password_hash(new_password)
+
+    user.password = hashed_new_password
+    session.commit()
+
+    return {&quot;msg&quot;: &quot;Password updated successfully&quot;}
+
+@router.put(&quot;/users/change_password&quot;)
+def change_password(
+    change_password_request: ChangePasswordRequest,
+    current_user: User = Depends(auth_handler.get_current_user),  # Пользователь из токена
+    session=Depends(get_session)
+):
+
+    return change_user_password(current_user.id, change_password_request.old_password,
+                                change_password_request.new_password, session)
+
+</code></pre>
+<p><img alt="" src="../imgs/img_13.png" /></p>
+<hr />
+<p>Далее дело дошло до разработки парсера.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
